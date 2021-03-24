@@ -1,0 +1,7 @@
+<div>
+  <p *ngIf="!didVote" [ngClass]="'vote-name'">{{ name }}! Please, vote!</p>
+  <p *ngIf="didVote">Thank you, {{ name }}!</p>
+
+  <button (click)="vote(true)" [disabled]="didVote">Agree</button>
+  <button (click)="vote(false)" [disabled]="didVote">Disagree</button>
+</div>
