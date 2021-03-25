@@ -4,7 +4,7 @@ import {Hero} from '../../hero';
 @Component({
   selector: 'app-hero-item',
   templateUrl: './hero-item.component.html',
-  styleUrls: ['./hero-item.component.css']
+  styleUrls: ['./hero-item.component.less']
 })
 export class HeroItemComponent implements OnInit {
   constructor() { }
@@ -23,6 +23,7 @@ export class HeroItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this);
   }
 
 }

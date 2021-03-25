@@ -1,6 +1,7 @@
 export interface Hero {
   name: string;
   value: number;
+  active?: boolean;
 }
 export const HEROES: Hero[] = [
   {
@@ -9,7 +10,8 @@ export const HEROES: Hero[] = [
   },
   {
     name: '',
-    value: 2
+    value: 2,
+    active: true
   },
   {
     name: 'Three',

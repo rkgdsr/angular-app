@@ -1,1 +1,1 @@
-<li>{{ hero.name }} - {{ hero.value }}</li>
+<li [ngClass]="{ 'active': hero.active }">{{ hero.name }} - <span class="number">{{ hero.value }}</span></li>
