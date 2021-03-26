@@ -1,0 +1,4 @@
+
+<app-family-parent #parent (responded)="child.onResponded($event)">
+  <app-family-child #child (responded)="parent.onResponded($event)"></app-family-child>
+</app-family-parent>

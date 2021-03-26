@@ -1,0 +1,6 @@
+<button (click)="newMajor()">New major</button>
+<button (click)="newMinor()">New minor</button>
+
+<h3>Current version: {{ major }}.{{ minor }}</h3>
+
+<app-version-child [major]="major" [minor]="minor" ></app-version-child>

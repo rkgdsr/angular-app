@@ -1,0 +1,15 @@
+:host .number {
+  color: red;
+}
+
+:host(.active) {
+  color: green;
+}
+
+:host .active {
+  color: aquamarine;
+}
+
+/*.active {*/
+/*  color: blue;*/
+/*}*/
