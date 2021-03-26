@@ -12,3 +12,22 @@
   <h3>{{ selected.name }} is my hero!</h3>
   <a class="btn" routerLink="/details/{{ selected.id }}">More details</a>
 </div>
+
+
+
+<div class="form-new">
+  <div class="form-control">
+    <label for="name">name:</label>
+    <input id="name" #name placeholder="name">
+  </div>
+
+  <div class="form-control">
+    <label for="value">value:</label>
+    <input id="value" #value  placeholder="value" type="number">
+  </div>
+
+  <div>
+    <button (click)="add(name.value, +value.value)" class="btn btn--primary">Create</button>
+  </div>
+
+</div>
