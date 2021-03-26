@@ -8,31 +8,38 @@
     overflow: hidden;
     max-width: 280px;
 
-    background: @cTextGray;
-    margin-bottom: 4px;
+    background: @mainColor;
+    margin-bottom: 8px;
     border-radius: 5px;
+    line-height: 36px;
+    font-size: 18px;
+    cursor: pointer;
 
     transition: 0.2s;
+
+    display: flex;
+    justify-content: space-between;
 
     &:hover {
       transform: translateX(4px);
     }
 
-    &__link {
-      display: flex;
-      justify-content: space-between;
-    }
-
     &__id {
-      background: #18265b;
+      background: @cTextDarkBlue;
+      color: @mainColor;
+      width: 32px;
+      text-align: center;
+      margin-right: 10px;
     }
 
     &__name {
       flex: 1;
+      color: @cTextGray;
     }
 
     &__value {
-      background: #18265b;
+      background: @cTextDarkBlue;
+      color: @mainColor;
       width: 32px;
       text-align: center;
     }

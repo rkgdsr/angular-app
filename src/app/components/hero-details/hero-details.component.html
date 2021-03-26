@@ -1,13 +1,20 @@
 <h3>{{ hero.name | uppercase }} Details</h3>
 
-<div><span>id:</span> {{ hero.id }}</div>
-<div><span>name:</span> {{ hero.name }}</div>
+<div class="form-control">
+  <label>id:</label>
+  {{ hero.id }}
+</div>
 
-<div>
-  <label for="name"></label>
+<div class="form-control">
+  <label for="name">name:</label>
   <input id="name" [(ngModel)]="hero.name"  placeholder="name">
 </div>
 
+<div class="form-control">
+  <label for="value">value:</label>
+  <input id="value" [(ngModel)]="hero.value"  placeholder="value" type="number">
+</div>
+
 <div>
-  <button (click)="location.back()">Cancel</button>
+  <button (click)="location.back()" class="btn">Cancel</button>
 </div>

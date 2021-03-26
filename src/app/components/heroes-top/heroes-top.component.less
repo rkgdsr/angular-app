@@ -1,0 +1,48 @@
+@import "src/less/const";
+
+.heroes-top-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  .heroes-top-item {
+    flex: 1;
+    overflow: hidden;
+
+    background: @cTextDarkBlue;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 18px;
+
+    transition: 0.2s;
+
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 80px;
+    }
+
+    &__link {
+      color: @mainColor;
+    }
+
+    &__value {
+      font-size: 14px;
+    }
+
+    &:hover {
+      background: @mainColor;
+
+      .heroes-top-item__link {
+        color: @cTextDarkBlue;
+      }
+    }
+  }
+
+}

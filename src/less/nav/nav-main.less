@@ -21,7 +21,29 @@
   font-size: 18px;
   background: @mainColor;
   border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
   &:hover {
     color: blue;
+  }
+}
+
+.form-control {
+  margin-bottom: 10px;
+
+  label {
+    color: @cTextDarkBlue;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  input {
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 18px;
+    background: @mainColor2;
+    border-radius: 5px;
+    border: 1px solid @mainColor3;
   }
 }
