@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,10 @@ import { MessagesComponent } from './messages/messages.component';
     HeroesTopComponent,
     HeroDetailsComponent,
     MessagesComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {path: 'dashboard', component: HeroesTopComponent},
-      {path: 'heroes', component: HeroesListComponent},
-      {path: 'details/:id', component: HeroDetailsComponent},
-    ]),
     FormsModule,
     AppRoutingModule,
     HttpClientModule,

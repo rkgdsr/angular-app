@@ -1,10 +1,17 @@
 <h2>My Heroes</h2>
 
+
+<div class="form-control">
+  <label for="search">Search</label>
+  <input id="search" #searchBox (input)="search(searchBox.value)" placeholder="name">
+</div>
+
 <ul class="heroes-list">
   <li *ngFor="let hero of heroes" class="heroes-item" (click)="onSelect(hero)">
     <span class="heroes-item__id">{{ hero.id }}</span>
     <span class="heroes-item__name">{{ hero.name }}</span>
     <span class="heroes-item__value">{{ hero.value }}</span>
+    <span class="heroes-item__remove" (click)="delete(hero, $event)">❌</span>
   </li>
 </ul>
 
@@ -16,6 +23,10 @@
 
 
 <div class="form-new">
+  <div class="form-control">
+    <h4>Create new</h4>
+  </div>
+
   <div class="form-control">
     <label for="name">name:</label>
     <input id="name" #name placeholder="name">

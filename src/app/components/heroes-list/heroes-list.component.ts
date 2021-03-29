@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../hero';
-import { HEROES } from '../../heroes-list';
 import {HeroesService} from '../../heroes.service';
+import {Subject} from 'rxjs';
+import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
 
 @Component({
   selector: 'app-heroes-list',
@@ -12,8 +13,9 @@ export class HeroesListComponent implements OnInit {
 
   constructor(private heroesService: HeroesService) { }
 
-  heroes: Hero[] = HEROES;
+  heroes: Hero[] = [];
   selected?: Hero;
+  term = new Subject<string>();
 
   ngOnInit(): void {
     this.getHeroes();
@@ -32,5 +34,27 @@ export class HeroesListComponent implements OnInit {
       .subscribe(hero => {
         this.heroes.push(hero);
       });
+  }
+
+  delete(hero: Hero, e: Event): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroesService.deleteHero(hero.id).subscribe();
+
+    e.preventDefault();
+  }
+
+  search(request: string): void {
+    if (!request) {
+      this.getHeroes();
+      return;
+    }
+
+    this.term.next(request);
+
+    this.term.pipe(
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.heroesService.searchHeroes(term))
+    ).subscribe(heroes => this.heroes = heroes);
   }
 }
