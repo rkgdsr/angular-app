@@ -1,0 +1,54 @@
+
+.nav-main {
+  display: flex;
+  gap: 10px;
+
+  &__link {
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 18px;
+    background: @mainColor;
+    border-radius: 5px;
+    &--active {
+      color: blue;
+    }
+  }
+}
+
+.btn {
+  padding: 0 10px;
+  line-height: 28px;
+  font-size: 18px;
+  background: @mainColor;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: blue;
+  }
+
+  &--primary {
+    background: @cTextDarkBlue;
+    color: @mainColor2;
+  }
+}
+
+.form-control {
+  margin-bottom: 10px;
+
+  label {
+    color: @cTextDarkBlue;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  input {
+    padding: 0 10px;
+    line-height: 28px;
+    font-size: 18px;
+    background: @mainColor2;
+    border-radius: 5px;
+    border: 1px solid @mainColor3;
+  }
+}

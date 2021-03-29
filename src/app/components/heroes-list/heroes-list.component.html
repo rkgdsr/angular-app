@@ -1,0 +1,44 @@
+<h2>My Heroes</h2>
+
+
+<div class="form-control">
+  <label for="search">Search</label>
+  <input id="search" #searchBox (input)="search(searchBox.value)" placeholder="name">
+</div>
+
+<ul class="heroes-list">
+  <li *ngFor="let hero of heroes" class="heroes-item" (click)="onSelect(hero)">
+    <span class="heroes-item__id">{{ hero.id }}</span>
+    <span class="heroes-item__name">{{ hero.name }}</span>
+    <span class="heroes-item__value">{{ hero.value }}</span>
+    <span class="heroes-item__remove" (click)="delete(hero, $event)">❌</span>
+  </li>
+</ul>
+
+<div *ngIf="selected">
+  <h3>{{ selected.name }} is my hero!</h3>
+  <a class="btn" routerLink="/details/{{ selected.id }}">More details</a>
+</div>
+
+
+
+<div class="form-new">
+  <div class="form-control">
+    <h4>Create new</h4>
+  </div>
+
+  <div class="form-control">
+    <label for="name">name:</label>
+    <input id="name" #name placeholder="name">
+  </div>
+
+  <div class="form-control">
+    <label for="value">value:</label>
+    <input id="value" #value  placeholder="value" type="number">
+  </div>
+
+  <div>
+    <button (click)="add(name.value, +value.value)" class="btn btn--primary">Create</button>
+  </div>
+
+</div>

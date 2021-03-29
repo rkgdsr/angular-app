@@ -1,0 +1,11 @@
+<h2>My TOP</h2>
+
+<ul class="heroes-top-list">
+  <li *ngFor="let hero of getTopHeroes()" class="heroes-top-item">
+    <a class="heroes-top-item__link" routerLink="/details/{{ hero.id }}">
+      <span class="heroes-top-item__name">{{ hero.name }}</span>
+      <span class="heroes-top-item__value">{{ hero.value }}</span>
+    </a>
+  </li>
+</ul>
+
