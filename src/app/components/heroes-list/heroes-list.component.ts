@@ -17,6 +17,7 @@ export class HeroesListComponent implements OnInit {
   selected?: Hero;
   term = new Subject<string>();
 
+
   ngOnInit(): void {
     this.getHeroes();
   }
@@ -36,11 +37,9 @@ export class HeroesListComponent implements OnInit {
       });
   }
 
-  delete(hero: Hero, e: Event): void {
+  delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroesService.deleteHero(hero.id).subscribe();
-
-    e.preventDefault();
   }
 
   search(request: string): void {

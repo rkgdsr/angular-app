@@ -1,0 +1,7 @@
+
+<li class="heroes-item" [@newItem]="isNew ? 'new' : 'old'">
+  <span class="heroes-item__id">{{ hero.id }}</span>
+  <span class="heroes-item__name">{{ hero.name }}</span>
+  <span class="heroes-item__value">{{ hero.value }}</span>
+  <span class="heroes-item__remove" (click)="onDelete()">❌</span>
+</li>

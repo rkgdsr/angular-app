@@ -7,12 +7,22 @@
 </div>
 
 <ul class="heroes-list">
-  <li *ngFor="let hero of heroes" class="heroes-item" (click)="onSelect(hero)">
-    <span class="heroes-item__id">{{ hero.id }}</span>
-    <span class="heroes-item__name">{{ hero.name }}</span>
-    <span class="heroes-item__value">{{ hero.value }}</span>
-    <span class="heroes-item__remove" (click)="delete(hero, $event)">❌</span>
-  </li>
+<!--  <li *ngFor="let hero of heroes" class="heroes-item" (click)="onSelect(hero)">-->
+<!--    <span class="heroes-item__id">{{ hero.id }}</span>-->
+<!--    <span class="heroes-item__name">{{ hero.name }}</span>-->
+<!--    <span class="heroes-item__value">{{ hero.value }}</span>-->
+<!--    <span class="heroes-item__remove" (click)="delete(hero, $event)">❌</span>-->
+<!--  </li>-->
+
+  <hero-item-old *ngFor="let hero of heroes"
+                 (click)="onSelect(hero)"
+                 [hero]="hero"
+                 (delete)="delete(hero)"></hero-item-old>
+
+<!--  <app-hero-item *ngFor="let hero of heroes"-->
+<!--                 (click)="onSelect(hero)"-->
+<!--                 [hero]="hero"-->
+<!--                 (delete)="delete(hero)" ></app-hero-item>-->
 </ul>
 
 <div *ngIf="selected">

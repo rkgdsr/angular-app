@@ -1,0 +1,2 @@
+import './hero-old.component';
+
