@@ -26,6 +26,8 @@ import {CommonModule} from '@angular/common';
 import {HeroItemOldDirective} from './upgraded/hero-item.directive';
 import {heroesServiceProvider} from './upgraded/heroes-service.provider';
 
+import { SharedModule } from './shared.module';
+
 // @ts-ignore
 @NgModule({
   declarations: [
@@ -37,10 +39,10 @@ import {heroesServiceProvider} from './upgraded/heroes-service.provider';
     PageNotFoundComponent,
     HeroItemComponent,
 
-    HeroOldDirective,
     HeroItemOldDirective
   ],
   imports: [
+    SharedModule,
     BrowserModule,
     CommonModule,
     FormsModule,
