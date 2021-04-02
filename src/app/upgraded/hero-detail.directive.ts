@@ -3,7 +3,7 @@ import { UpgradeComponent } from '@angular/upgrade/static';
 import {Hero} from '../hero';
 
 @Directive({
-  selector: 'hero-old',
+  selector: 'hero-old'
 })
 export class HeroOldDirective extends UpgradeComponent {
   @Input() text: string;

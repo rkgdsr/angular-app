@@ -22,3 +22,4 @@ platformBrowserDynamic().bootstrapModule(AppModule)
     upgrade.bootstrap(document.documentElement, [OldAppModule.moduleName], { strictDi: true });
   })
   .catch(err => console.error(err));
+
