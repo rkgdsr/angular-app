@@ -9,14 +9,14 @@ import {downgradeComponent} from "@angular/upgrade/static";
 //
 // })();
 
-angular
-  .module('oldHeroesShare', ['oldHeroes'])
-  .directive('oldHeroes', downgradeComponent({
-    component: AppComponent
-  }));
+// angular
+//   .module('oldHeroes', ['oldHeroes'])
+//   .directive('oldHeroes', downgradeComponent({
+//     component: AppComponent
+//   }));
 
 angular
-  .module('oldHeroesShare', ['oldHeroes'])
+  .module('oldHeroes', ['oldHeroes'])
   .directive('appHeroItem', downgradeComponent({
     component: HeroItemComponent,
     inputs: ['hero'],

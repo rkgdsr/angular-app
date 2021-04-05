@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Hero} from './hero';
-import {HEROES} from './heroes-list';
+import { Hero } from '@src/app/types/hero';
 import {Observable, of} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {MessageService} from './messages/message.service';
+import {MessageService} from '@src/app/messages/message.service';
 
 import { catchError, map, tap } from 'rxjs/operators';
+import {MainFilterWorkerService} from '@src/app/workers/main-filter-worker.service';
 
 
 @Injectable({
@@ -13,10 +13,13 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class HeroesService {
 
+  listByFilter: Observable<Hero[]>;
+
   constructor(
     private http: HttpClient,
     private messageService: MessageService
-  ) { }
+  ) {
+  }
 
   private heroesUrl = 'api/heroes';
 
@@ -50,8 +53,11 @@ export class HeroesService {
   }
 
   getHero(id: number): Observable<Hero> {
-    const hero = HEROES.find(item => item.id === id);
-    return of(hero);
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
   }
 
   updateHero(hero: Hero): Observable<any> {
@@ -86,4 +92,5 @@ export class HeroesService {
       )
     );
   }
+
 }

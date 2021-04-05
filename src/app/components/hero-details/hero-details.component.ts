@@ -1,18 +1,18 @@
 import {AfterViewInit, Component, forwardRef, Inject, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
-import {Hero} from '../../hero';
-import {HeroesService} from '../../heroes.service';
+import {Hero} from '@src/app/types/hero';
+import {HeroesService} from '@src/app/services/heroes.service';
 
 @Component({
   selector: 'app-hero-details',
   templateUrl: './hero-details.component.html',
   styleUrls: ['./hero-details.component.css'],
+  providers: [
+    HeroesService
+  ]
 })
 export class HeroDetailsComponent implements OnInit, AfterViewInit {
-
-  show: boolean;
-
   constructor(
     @Inject(forwardRef(() => ActivatedRoute)) private route: ActivatedRoute,
     @Inject(forwardRef(() => Location)) public location: Location,
@@ -26,7 +26,6 @@ export class HeroDetailsComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.getHero();
-    this.show = true;
   }
 
   ngAfterViewInit(): void {

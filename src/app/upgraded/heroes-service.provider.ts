@@ -1,4 +1,4 @@
-import { HeroesService } from '../heroes.service';
+import { HeroesService } from '@src/app/services/heroes.service';
 
 export function heroesServiceFactory(i: any): any {
   return i.get('heroes');

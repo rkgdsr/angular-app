@@ -1,3 +1,3 @@
 // import './hero-old.template.html';
-import './hero-old.component';
+import './hero-full-info.component';
 

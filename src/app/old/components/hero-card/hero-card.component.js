@@ -3,22 +3,22 @@
 
   angular
     .module('oldHeroes')
-    .component('heroItemOld', {
+    .component('heroCard', {
       template: `
         <div ng-if="$ctrl.hero" class="redBox">
-            <p>Its old</p>
+            <p>Its old card</p>
             <app-hero-item [hero]="$ctrl.hero" (delete)="$ctrl.delete"></app-hero-item>
         </div>
       `,
       // template: require('./hero-old.template.html'),
-      controller: HeroItemOldController,
+      controller: HeroCardController,
       bindings: {
         hero: '<',
         delete: '&'
       }
     });
 
-  function HeroItemOldController($scope) {
-    console.log(this)
+  function HeroCardController($scope) {
+    // console.log(this)
   }
 })();

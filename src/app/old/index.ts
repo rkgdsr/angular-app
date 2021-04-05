@@ -2,7 +2,7 @@
 import { AppModule } from './index.module';
 import './index.config';
 
-import './components/hero-old';
-import './components/hero-item-old';
+import './components/hero-full-info';
+import './components/hero-card';
 
 export { AppModule };

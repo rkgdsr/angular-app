@@ -3,7 +3,7 @@
 
   angular
     .module('oldHeroes')
-    .component('heroOld', {
+    .component('heroFullInfo', {
       template: `
         <div ng-if="$ctrl.hero" class="redBox">
             <h1>Hero: {{ $ctrl.hero.name }} </h1>
@@ -13,14 +13,14 @@
       // templateUrl: '@src/app/old/components/hero-old/hero-old.template.html',
       // templateUrl: './hero-old.template.html',
       // template: require('@src/app/old/components/hero-old/hero-old.template.html'),
-      controller: HeroOldController,
+      controller: HeroFullInfoController,
       bindings: {
         text: '<',
         hero: '<'
       }
     });
 
-  function HeroOldController() {
-    console.log(this)
+  function HeroFullInfoController() {
+    // console.log(this)
   }
 })();

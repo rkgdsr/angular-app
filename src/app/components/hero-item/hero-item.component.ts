@@ -1,5 +1,5 @@
 import {Component, Input, Output, OnInit, EventEmitter} from '@angular/core';
-import {Hero} from '../../hero';
+import { Hero } from '@src/app/types/hero';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 
 @Component({

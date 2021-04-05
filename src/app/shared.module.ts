@@ -1,22 +1,25 @@
 import {NgModule} from '@angular/core';
-import {HeroOldDirective} from '@src/app/upgraded/hero-detail.directive';
+import {HeroFullInfoDirective} from '@src/app/upgraded/hero-full-info.directive';
 import {CommonModule} from '@angular/common';
-import {HeroItemOldDirective} from '@src/app/upgraded/hero-item.directive';
+import {HeroCardDirective} from '@src/app/upgraded/hero-card.directive';
 
 
 @NgModule({
   providers: [],
   declarations: [
-    HeroOldDirective,
+    HeroFullInfoDirective,
+    HeroCardDirective
   ],
   imports: [
     CommonModule,
   ],
   exports: [
-    HeroOldDirective,
+    HeroFullInfoDirective,
+    HeroCardDirective
   ],
   entryComponents: [
-    HeroOldDirective,
+    HeroFullInfoDirective,
+    HeroCardDirective
   ]
 })
 export class SharedModule {}

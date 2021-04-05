@@ -1,21 +1,21 @@
 import {Directive, ElementRef, forwardRef, Injector, Input} from '@angular/core';
 import { UpgradeComponent } from '@angular/upgrade/static';
-import {Hero} from '../hero';
+import { Hero } from '@src/app/types/hero';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Directive({
-  selector: 'lw-hero-old',
+  selector: 'hero-full-info',
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => HeroOldDirective),
+    useExisting: forwardRef(() => HeroFullInfoDirective),
     multi: true,
   }]
 })
-export class HeroOldDirective extends UpgradeComponent {
+export class HeroFullInfoDirective extends UpgradeComponent {
   @Input() text: string;
   @Input() hero: Hero;
 
   constructor(elementRef: ElementRef, injector: Injector) {
-    super('heroOld', elementRef, injector);
+    super('heroFullInfo', elementRef, injector);
   }
 }

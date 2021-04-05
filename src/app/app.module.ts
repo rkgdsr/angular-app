@@ -11,7 +11,7 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from '@src/app/services/in-memory-data.service';
 import { MessagesComponent } from './messages/messages.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeroItemComponent } from './components/hero-item/hero-item.component';
@@ -19,12 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {setAngularJSGlobal, UpgradeModule} from '@angular/upgrade/static';
 
-import {HeroOldDirective} from './upgraded/hero-detail.directive';
 
-import angular from 'angular';
 import {CommonModule} from '@angular/common';
-import {HeroItemOldDirective} from './upgraded/hero-item.directive';
-import {heroesServiceProvider} from './upgraded/heroes-service.provider';
 
 import { SharedModule } from './shared.module';
 
@@ -37,9 +33,7 @@ import { SharedModule } from './shared.module';
     HeroDetailsComponent,
     MessagesComponent,
     PageNotFoundComponent,
-    HeroItemComponent,
-
-    HeroItemOldDirective
+    HeroItemComponent
   ],
   imports: [
     SharedModule,
@@ -59,8 +53,7 @@ import { SharedModule } from './shared.module';
     )
   ],
   providers: [
-    { provide: '$scope', useExisting: '$rootScope' },
-    // heroesServiceProvider
+    { provide: '$scope', useExisting: '$rootScope' }
   ],
   bootstrap: [AppComponent],
 })

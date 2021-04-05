@@ -6,6 +6,10 @@
   <input id="search" #searchBox (input)="search(searchBox.value)" placeholder="name">
 </div>
 
+<input type="text" #filterValue>
+<button (click)="filter(filterValue.value)">Filter</button>
+<button (click)="resetFilter()">Reset</button>
+
 <ul class="heroes-list">
 <!--  <li *ngFor="let hero of heroes" class="heroes-item" (click)="onSelect(hero)">-->
 <!--    <span class="heroes-item__id">{{ hero.id }}</span>-->
@@ -14,15 +18,15 @@
 <!--    <span class="heroes-item__remove" (click)="delete(hero, $event)">❌</span>-->
 <!--  </li>-->
 
-  <hero-item-old *ngFor="let hero of heroes"
+  <hero-card *ngFor="let hero of renderHeroes()"
                  (click)="onSelect(hero)"
                  [hero]="hero"
-                 (delete)="delete(hero)"></hero-item-old>
+                 (delete)="delete(hero)"></hero-card>
 
-  <app-hero-item *ngFor="let hero of heroes"
-                 (click)="onSelect(hero)"
-                 [hero]="hero"
-                 (delete)="delete(hero)" ></app-hero-item>
+<!--  <app-hero-item *ngFor="let hero of heroes"-->
+<!--                 (click)="onSelect(hero)"-->
+<!--                 [hero]="hero"-->
+<!--                 (delete)="delete(hero)" ></app-hero-item>-->
 </ul>
 
 <div *ngIf="selected">

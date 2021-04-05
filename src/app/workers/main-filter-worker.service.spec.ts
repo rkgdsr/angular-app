@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WorkerService } from './worker.service';
+import { MainFilterWorkerService } from './worker.service';
 
 describe('WorkerService', () => {
-  let service: WorkerService;
+  let service: MainFilterWorkerService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WorkerService);
+    service = TestBed.inject(MainFilterWorkerService);
   });
 
   it('should be created', () => {
